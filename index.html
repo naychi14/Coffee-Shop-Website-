@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- reCAPTCHA API -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/coffee_logo.png" alt="Bean Boutique Logo">
+      <span class="site-name">Bean Boutique</span>
+    </div>
+  </header>
+
+
+  <!-- Navigation Bar -->
+  <nav>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="coffee.html">Coffee ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="Latte.html">Latte</a></li>
+          <li><a href="Americano.html">Americano</a></li>
+          <li><a href="Mocha.html">Mocha</a></li>
+        </ul>
+      </li>
+      <li><a href="blend.html">Coffee Blend</a></li>
+      <li><a href="brewing.html">Brewing Equipment</a></li>
+      <li><a href="events.html">Events & Workshops</a></li>
+      <li><a href="cart.html">Shopping Cart</a></li>
+      <li><a href="offers.html">Special Offers</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Header with Slideshow -->
+
+  <div class="slideshow">
+    <div class="slide active">
+      <img src="images/coffee_ss3.jpg" alt="Welcome Coffee">
+      <div class="overlay-text">Welcome!</div>
+    </div>
+    <div class="slide">
+      <img src="images/coffee_shop5.jpg" alt="Coffee Shop">
+      <div class="overlay-text">Perfect Vibe!</div>
+    </div>
+    <div class="slide">
+      <img src="images/ethiopian_yirgacheffe.jpg" alt="Coffee Bean">
+      <div class="overlay-text">Delicious Coffee!</div>
+    </div>
+  </div>
+
+
+  <main>
+    <!-- Welcome Section -->
+    <section class="welcome">
+      <h1>☕ Welcome to <span>Bean Boutique</span></h1>
+      <p>
+        Experience the finest blends, discover premium brewing equipment,
+        and enjoy the art of coffee like never before.
+      </p>
+      <p><a href="coffee.html" class="cta-btn"> Explore Our Coffee </a></p>
+    </section>
+
+    <!-- Advertising Feed -->
+    <section class="adv">
+      <div class="adv-img">
+        <img src="images/coffee_gif.gif" alt="Coffee">
+      </div>
+      <div class="adv-text">
+        <h2>🎁 Limited Time Discount</h2>
+        <p>
+          Get <strong>20% off</strong> on all coffee blends this week! Don’t miss out on our freshly roasted
+          specials. Perfect time to grab your favorites at Bean Boutique.
+        </p>
+        <p><a href="blend.html" class="cta-btn"> Shop Now </a></p>
+
+      </div>
+    </section>
+
+    <!-- Coffee Selection Preview -->
+    <section class="coffee-selection">
+      <h2>☕ Our Coffee Selection</h2>
+      <div class="coffee-list">
+        <div class="coffee-item bg">
+          <a href="Latte.html"><img src="images/Latte.jpg" alt="Latte"></a>
+          <h2>Latte</h2>
+        </div>
+        <div class="coffee-item bg">
+          <a href="Americano.html"><img src="images/americano.jpg" alt="Americano"></a>
+          <h2>Americano</h2>
+        </div>
+        <div class="coffee-item bg">
+          <a href="Mocha.html"><img src="images/mocha.jpg" alt="Mocha"></a>
+          <h2>Mocha</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coffee Blend Preview -->
+    <section class="coffee-blend">
+      <h2>🫘 Our Coffee Blend</h2>
+      <div class="coffee-list">
+        <div class="coffee-item bg">
+          <a href="blend.html"><img src="images/ethiopian_yirgacheffe.jpg" alt="Ethiopian Yirgacheffe"></a>
+        </div>
+        <div class="coffee-item bg">
+          <a href="blend.html"><img src="images/colombia_supermo.jpg" alt="Colombia Supremo"></a>
+        </div>
+        <div class="coffee-item bg">
+          <a href="blend.html"><img src="images/decaf_dark_roast.jpg" alt="Decaf Dark Roast"></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Brewing Equipment Preview -->
+    <section class="brewing-equipment">
+      <h2>⚡ Brewing Equipments</h2>
+      <div class="equipment-list">
+        <div class="equipment-item">
+          <a href="brewing.html"><img src="images/aeropress.jpg" alt="Manual Coffee Maker"></a>
+          <h2>Manual</h2>
+        </div>
+        <div class="equipment-item">
+          <a href="brewing.html"><img src="images/french_press.jpg" alt="Electric Coffee Maker"></a>
+          <h2>Electric</h2>
+        </div>
+        <div class="equipment-item">
+          <a href="brewing.html"><img src="images/siphon_brewers.jpg" alt="Stovetop Coffee Maker"></a>
+          <h2>Stovetop</h2>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Interactive Map Widget -->
+    <section class="widget">
+      <h2>Visit Us</h2>
+      <div class="map">
+        <!-- Google Maps Embed  -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d8a32f7f8c8!2sBean%20Boutique!5e0!3m2!1sen!2sus!4v1622549400000!5m2!1sen!2sus"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+
+    <!-- Our Shop Section -->
+    <section class="widget shop-widget">
+      <h2>Our Shop</h2>
+      <div class="coffee-list">
+        <div class="coffee-item">
+          <img src="images/coffee_shop1.jpg" alt="Our Coffee Shop">
+        </div>
+        <div class="coffee-item">
+          <img src="images/coffee_shop2.jpg" alt="Our Coffee Shop">
+        </div>
+        <div class="coffee-item">
+          <img src="images/coffee_shop3.jpg" alt="Our Coffee Shop">
+        </div>
+        <div class="coffee-item">
+          <img src="images/coffee_shop4.jpg" alt="Our Coffee Shop">
+        </div>
+      </div>
+    </section>
+
+    <!--  Audio -->
+    <audio src="audio/Audio1.mp3" autoplay loop controls></audio>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal Popup for Email Signup -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Welcome to Bean Boutique!</h2>
+      <p>Get 10% off your first purchase when you sign up for our newsletter.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <!-- reCAPTCHA Widget -->
+        <!-- <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div> -->
+        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+
+</body>
+
+</html>

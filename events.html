@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Events & Workshops</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/coffee_logo.png" alt="Bean Boutique Logo">
+      <span class="site-name">Bean Boutique</span>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="coffee.html">Coffee ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="Latte.html">Latte</a></li>
+          <li><a href="Americano.html">Americano</a></li>
+          <li><a href="Mocha.html">Mocha</a></li>
+        </ul>
+      </li>
+      <li><a href="blend.html">Coffee Blend</a></li>
+      <li><a href="brewing.html">Brewing Equipment</a></li>
+      <li><a href="events.html">Events & Workshops</a></li>
+      <li><a href="cart.html">Shopping Cart</a></li>
+      <li><a href="offers.html">Special Offers</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Upcoming Events & Workshops</h1>
+    <div class="event-list">
+
+      <!-- Event 1 -->
+      <div class="event-item">
+        <img src="images/latte_art.jpg" alt="Coffee Workshop">
+        <h2>Latte Art Training</h2>
+        <p><strong>Date:</strong> October 30, 2025</p>
+        <p>Learn the secrets of creating beautiful latte art with our expert baristas. Perfect for coffee lovers who
+          want to add creativity to every cup.</p>
+        <a href="registration.html" class="cta-btn"> Register Now </a>
+
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-item">
+        <img src="images/coffee_shop1.jpg" alt="Coffee Tasting Event">
+        <h2>Global Coffee Tasting</h2>
+        <p><strong>Date:</strong> November 3, 2025</p>
+        <p>Embark on a journey around the world through coffee! Taste exotic blends, discover unique brewing styles, and
+          expand your palate.</p>
+        <a href="registration.html" class="cta-btn"> Register Now </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const dropdowns = document.querySelectorAll(".dropdown > a");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // make dropdowns expandable on small screens
+    dropdowns.forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault(); // stop direct link navigation
+          link.parentElement.classList.toggle("open");
+        }
+      });
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+
+</body>
+
+</html>

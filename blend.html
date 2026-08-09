@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique - Coffee Blend Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/coffee_logo.png" alt="Bean Boutique Logo">
+            <span class="site-name">Bean Boutique</span>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="coffee.html">Coffee ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="Latte.html">Latte</a></li>
+                    <li><a href="Americano.html">Americano</a></li>
+                    <li><a href="Mocha.html">Mocha</a></li>
+                </ul>
+            </li>
+            <li><a href="blend.html">Coffee Blend</a></li>
+            <li><a href="brewing.html">Brewing Equipment</a></li>
+            <li><a href="events.html">Events & Workshops</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search coffee blend...">
+    </div>
+
+    <main>
+        <h1> Coffee Blend Selection</h1>
+
+        <div class="coffee-list">
+            <div class="coffee-item">
+                <img src="images/ethiopian_yirgacheffe.jpg" alt="Ethiopian Yirgacheffe">
+                <h2>Ethiopian Yirgacheffe</h2>
+                <h5><i>Floral and tea-like, from coffee's birthplace.</i></h5>
+                <p>Notes: Bergamot, Jasmine, Blueberry</p>
+                <p>Recommended Brew: Pour-Over, Aeropress</p>
+                <p><b>Price:</b> $6.00</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+            <div class="coffee-item">
+                <img src="images/sumatra_mandheling.jpg" alt="Sumatra Mandheling">
+                <h2>Sumatra Mandheling</h2>
+                <h5><i>An earthy dark roast from volcanic slopes.</i></h5>
+                <p>Notes: Dark Chocolate, Cedar, Smoky</p>
+                <p>Recommended Brew: French Press, Espresso</p>
+                <p><b>Price:</b> $6.50</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+            <div class="coffee-item">
+                <img src="images/colombia_supermo.jpg" alt="Colombia Supremo">
+                <h2>Colombia Supremo</h2>
+                <h5><i>A well-balanced and versatile crowd-pleaser.</i></h5>
+                <p>Notes: Brown Sugar, Hazelnut, Caramel</p>
+                <p>Recommended Brew: Drip, Pour-Over</p>
+                <p><b>Price:</b> $5.80</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+            <div class="coffee-item">
+                <img src="images/guatemalan_antigua.jpg" alt="Guatemalan Antigua">
+                <h2>Guatemalan Antigua</h2>
+                <h5><i>Perfect with a volcanic valley richness.</i></h5>
+                <p>Notes: Cocoa, Lemon, Spice</p>
+                <p>Recommended Brew: French Press, Espresso</p>
+                <p><b>Price:</b> $6.20</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+            <div class="coffee-item">
+                <img src="images/costa_rica.jpg" alt="Costa Rica Tarrazú">
+                <h2>Costa Rica Tarrazú</h2>
+                <h5><i>High-grown coffee with crisp, sweet notes.</i></h5>
+                <p>Notes: Brown Sugar, Grapefruit, Honey</p>
+                <p>Recommended Brew: Pour-Over, Aeropress</p>
+                <p><b>Price:</b> $6.10</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+            <div class="coffee-item">
+                <img src="images/brazilsantos.jpg" alt="Brazil Santos">
+                <h2>Brazil Santos</h2>
+                <h5><i>A smooth, low-acidity coffee with nuts.</i></h5>
+                <p>Notes: Chocolate, Roasted Nuts, Creamy</p>
+                <p>Recommended Brew: Espresso, Drip</p>
+                <p><b>Price:</b> $5.90</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+            <div class="coffee-item">
+                <img src="images/decaf_dark_roast.jpg" alt="Decaf Dark Roast">
+                <h2>Decaf Dark Roast</h2>
+                <h5><i>Full-flavored decaf without compromise.</i></h5>
+                <p>Notes: Baker's Chocolate, Toasted Marshmallow</p>
+                <p>Recommended Brew: French Press, Drip</p>
+                <p><b>Price:</b> $5.50</p>
+                <button class="reg">Add to Cart</button>
+            </div>
+
+        </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const buttons = document.querySelectorAll(".reg");
+
+                buttons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        const coffeeItem = button.closest(".coffee-item");
+                        const name = coffeeItem.querySelector("h2").innerText.trim();
+                        const priceText = coffeeItem.querySelector("p:nth-of-type(3)").innerText.trim();
+                        const price = parseFloat(priceText.replace(/[^0-9.]/g, ""));
+
+                        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                        // Check if item already exists
+                        const existingItem = cart.find(item => item.name === name);
+                        if (existingItem) {
+                            existingItem.quantity += 1;
+                        } else {
+                            cart.push({ name, price, quantity: 1 });
+                        }
+
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        alert(`${name} added to cart!`);
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const navLinks = document.getElementById("nav-links");
+            const dropdowns = document.querySelectorAll(".dropdown > a");
+
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("show");
+            });
+
+            // make dropdowns expandable on small screens
+            dropdowns.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault(); // stop direct link navigation
+                        link.parentElement.classList.toggle("open");
+                    }
+                });
+            });
+        </script>
+
+
+        <script>
+            const searchInput = document.getElementById("searchInput");
+
+            searchInput.addEventListener("input", function () {
+                const filter = this.value.toLowerCase();
+                const items = document.querySelectorAll(".coffee-item");
+
+                items.forEach(item => {
+                    const text = item.innerText.toLowerCase();
+                    if (text.includes(filter)) {
+                        item.style.display = "block";
+                        item.classList.add("fade-in");
+                        item.classList.remove("fade-out");
+                    } else {
+                        item.classList.add("fade-out");
+                        setTimeout(() => {
+                            if (!text.includes(filter)) item.style.display = "none";
+                        }, 300); // smooth fade-out
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            const text = "Search coffee blend...";
+            const input = document.getElementById("searchInput");
+            let i = 0;
+            let forward = true;
+
+            function typeEffect() {
+                if (forward) {
+                    input.setAttribute("placeholder", text.slice(0, i++));
+                    if (i > text.length) {
+                        forward = false;
+                        setTimeout(typeEffect, 1500); // pause when full text shown
+                        return;
+                    }
+                } else {
+                    input.setAttribute("placeholder", text.slice(0, i--));
+                    if (i < 0) {
+                        forward = true;
+                    }
+                }
+                setTimeout(typeEffect, 120); // typing speed
+            }
+
+            typeEffect();
+        </script>
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

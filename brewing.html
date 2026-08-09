@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Brewing Equipment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/coffee_logo.png" alt="Bean Boutique Logo">
+      <span class="site-name">Bean Boutique</span>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="coffee.html">Coffee ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="Latte.html">Latte</a></li>
+          <li><a href="Americano.html">Americano</a></li>
+          <li><a href="Mocha.html">Mocha</a></li>
+        </ul>
+      </li>
+      <li><a href="blend.html">Coffee Blend</a></li>
+      <li><a href="brewing.html">Brewing Equipment</a></li>
+      <li><a href="events.html">Events & Workshops</a></li>
+      <li><a href="cart.html">Shopping Cart</a></li>
+      <li><a href="offers.html">Special Offers</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search equipment...">
+  </div>
+
+
+  <main>
+    <h1>☕ Manual Brewers</h1>
+    <div class="equipment-list">
+      <div class="equipment-item">
+        <img src="images/french_press.jpg" alt="French Press">
+        <h2>French Press</h2>
+        <p>Ideal for bold and smooth coffee made the classic way.</p>
+        <p> $22.9 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+      <div class="equipment-item">
+        <img src="images/aeropress.jpg" alt="AeroPress">
+        <h2>AeroPress</h2>
+        <p>Perfect for quick, clean, and rich brews on the go.</p>
+        <p> $21.5 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+      <div class="equipment-item">
+        <img src="images/siphon_brewers.jpg" alt="Siphon Brewers">
+        <h2>Siphon Brewers</h2>
+        <p>Elegant brewing for smooth, aromatic coffee.</p>
+        <p> $21.9 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+    </div>
+
+    <h1>⚡ Electric Brewers</h1>
+    <div class="equipment-list">
+      <div class="equipment-item">
+        <img src="images/drip_coffee_makers.jpeg" alt="Drip Coffee Makers">
+        <h2>Drip Coffee Makers</h2>
+        <p>Reliable morning brews with just one touch.</p>
+        <p> $28.5 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+      <div class="equipment-item">
+        <img src="images/espresso_machines.jpg" alt="Espresso Machines">
+        <h2>Espresso Machines</h2>
+        <p>For a perfect shot of rich, creamy espresso.</p>
+        <p> $29.2 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+      <div class="equipment-item">
+        <img src="images/single_serve_machines.jpg" alt="Single-Serve Machines">
+        <h2>Single-Serve Machines</h2>
+        <p>Fast and easy coffee for busy mornings.</p>
+        <p> $24.8 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+    </div>
+
+    <h1>🔥 Stovetop Brewers</h1>
+    <div class="equipment-list">
+      <div class="equipment-item">
+        <img src="images/moka_pot.jpg" alt="Moka Pot">
+        <h2>Moka Pot</h2>
+        <p>Strong, Italian-style coffee brewed on the stove.</p>
+        <p> $21.9 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+      <div class="equipment-item">
+        <img src="images/percolator.jpg" alt="Stovetop Percolators">
+        <h2>Stovetop Percolators</h2>
+        <p>Classic aroma and deep flavor with every cycle.</p>
+        <p> $22.5 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+      <div class="equipment-item">
+        <img src="images/turkish_coffee_pot.jpg" alt="Turkish Coffee Pot">
+        <h2>Turkish Coffee Pot</h2>
+        <p>Authentic, velvety coffee with a traditional touch.</p>
+        <p> $24.5 </p>
+        <button class="reg"> Add to Cart</button>
+      </div>
+    </div>
+
+    <h2>✨ Learn More About Brewing</h2>
+    <div class="video-row">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/QoLs_Zttmcg?si=68lbly37wEXwP1H3" title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/2ziSri3o8Y8?si=5mVgIwxhGS-BTLpe" title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".reg");
+
+        buttons.forEach(button => {
+          button.addEventListener("click", () => {
+            const equipmentItem = button.closest(".equipment-item");
+            const name = equipmentItem.querySelector("h2").innerText.trim();
+
+            // Fix: target the last paragraph (price)
+            const priceText = equipmentItem.querySelector("p:last-of-type").innerText.trim();
+            const price = parseFloat(priceText.replace(/[^0-9.]/g, ""));
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Check if item already exists
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ name, price, quantity: 1 });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} added to cart!`);
+          });
+        });
+      });
+    </script>
+
+
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+
+      searchInput.addEventListener("input", function () {
+        const filter = this.value.toLowerCase();
+        const items = document.querySelectorAll(".equipment-item");
+
+        items.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          if (text.includes(filter)) {
+            item.style.display = "block";
+            item.classList.add("fade-in");
+            item.classList.remove("fade-out");
+          } else {
+            item.classList.add("fade-out");
+            setTimeout(() => {
+              if (!text.includes(filter)) item.style.display = "none";
+            }, 300); // smooth fade-out
+          }
+        });
+      });
+    </script>
+
+    <script>
+      const text = "Search equipment...";
+      const input = document.getElementById("searchInput");
+      let i = 0;
+      let forward = true;
+
+      function typeEffect() {
+        if (forward) {
+          input.setAttribute("placeholder", text.slice(0, i++));
+          if (i > text.length) {
+            forward = false;
+            setTimeout(typeEffect, 1500); // pause when full text shown
+            return;
+          }
+        } else {
+          input.setAttribute("placeholder", text.slice(0, i--));
+          if (i < 0) {
+            forward = true;
+          }
+        }
+        setTimeout(typeEffect, 120); // typing speed
+      }
+
+      typeEffect();
+    </script>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+      const dropdowns = document.querySelectorAll(".dropdown > a");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      // make dropdowns expandable on small screens
+      dropdowns.forEach(link => {
+        link.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault(); // stop direct link navigation
+            link.parentElement.classList.toggle("open");
+          }
+        });
+      });
+    </script>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bean Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>

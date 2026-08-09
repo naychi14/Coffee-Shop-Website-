@@ -1,0 +1,797 @@
+/* -------------------------------
+   General Styles
+--------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fef9f6;
+    color: #4b2e2e;
+}
+
+main {
+    padding: 2rem;
+    background-color: #fffaf7;
+}
+
+/* -------------------------------
+   Navigation
+--------------------------------- */
+nav {
+    background: #6e4b3a;
+    color: #fff;
+    padding: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav a {
+    color: #ffeadd;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffbdbd;
+    text-decoration: underline;
+}
+
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #795340;
+    min-width: 120px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding-top: 10px;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    display: block;
+    color: #fff;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Hamburger button hidden by default */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Small screen responsive nav */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none;
+        /* hide menu by default */
+        flex-direction: column;
+        gap: 1rem;
+        background: #6e4b3a;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+        /* show when toggled */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* show hamburger */
+    }
+
+    /* Dropdown works on click instead of hover in mobile */
+    .dropdown:hover .dropdown-content {
+        display: none;
+        /* disable hover behavior */
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+        /* show on click */
+        position: static;
+        padding: 0;
+        background: none;
+    }
+}
+
+
+/* -------------------------------
+   Headings
+--------------------------------- */
+h1,
+h2 {
+    color: #5e3d31;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px #e3cfcf;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px #e3cfcf;
+}
+
+/* -------------------------------
+   Lists & Items
+--------------------------------- */
+.coffee-list,
+.equipment-list,
+.event-list,
+.cart-items,
+.offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.coffee-item,
+.equipment-item,
+.event-item,
+.cart-item,
+.offer-item {
+    background-color: #fff2ec;
+    border: 1px solid #d8bca7;
+    padding: 1rem;
+    width: 312px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(206, 163, 170, 1);
+    transition: transform 0.3s ease;
+}
+
+.coffee-item:hover,
+.equipment-item:hover,
+.event-item:hover,
+.cart-item:hover,
+.offer-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Item images */
+.coffee-item img,
+.equipment-item img,
+.event-item img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.coffee-item img,
+.equipment-item img {
+    height: 290px;
+    margin-bottom: 0.1rem;
+}
+
+.event-item img {
+    height: 200px;
+}
+
+/* -------------------------------
+   Buttons
+--------------------------------- */
+button,
+button.reg,
+.cta-btn {
+    background-color: #a97b61;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button,
+button.reg,
+.cta-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #8b5e3c;
+}
+
+button.reg,
+.cta-btn {
+    padding: 0.4rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+button.reg:hover,
+.cta-btn:hover {
+    background-color: #8b5e3c;
+    transform: translateY(-3px);
+}
+
+/* -------------------------------
+   Registration Form
+--------------------------------- */
+.registration-form {
+    background-color: #fff1e8;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+    max-width: 500px;
+    margin: 0 auto 50px auto;
+    border: 1px solid #d4b8a4;
+}
+
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4b2e2e;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #5e3d31;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #c9a892;
+    border-radius: 6px;
+    background-color: #fffaf8;
+    box-sizing: border-box; 
+}
+
+.registration-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c9a892;
+    border-radius: 6px;
+    background-color: #fffaf8;
+    resize: vertical;
+    box-sizing: border-box; 
+}
+
+
+/* -------------------------------
+   Footer
+--------------------------------- */
+footer {
+    background-color: #6e4b3a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+    margin-top: 3rem;
+}
+
+/* -------------------------------
+   Modal
+--------------------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #fffaf7;
+    padding: 2rem;
+    width: 50%;
+    margin: 10% auto;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* -------------------------------
+   Widgets
+--------------------------------- */
+
+.map {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* centers it */
+    border: 3px solid #e6baba;
+    border-radius: 6px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+}
+
+/* -------------------------------
+   Video Section
+--------------------------------- */
+.coffee-video-section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.video-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    /* keeps layout centered and not too wide */
+    margin: 0 auto;
+}
+
+.video-box {
+    flex: 1 1 45%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    /* keeps correct YouTube ratio */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+/* -------------------------------
+   Slideshow
+--------------------------------- */
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideshow img.active {
+    display: block;
+}
+
+/* Overlay text */
+.overlay-text,
+.overtext {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.overtext {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+}
+
+.overlay-text {
+    bottom: 20%;
+    left: 15%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* -------------------------------
+   Advertising
+--------------------------------- */
+.adv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background: #fff7f2;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    max-width: 1000px;
+}
+
+.adv-img img {
+    width: 250px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.adv-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+.adv-text h2 {
+    font-size: 2rem;
+    color: #4b2e2e;
+    margin-bottom: 1rem;
+}
+
+.adv-text p {
+    font-size: 1.1rem;
+    color: #6a443e;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* -------------------------------
+   Special Offers & Subscriptions
+--------------------------------- */
+.subscription-plans {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.subscription-plans h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px #e0c9c9;
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.offer-item {
+    position: relative;
+    background: linear-gradient(135deg, #fff7f2, #fcefe9);
+    border: 1px solid #e2c7b8;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.offer-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(139, 94, 60, 0.25);
+}
+
+.offer-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.offer-item ul {
+    text-align: left;
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.offer-item ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.offer-item button {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.offer-item.popular {
+    border: 2px solid #a97b61;
+    background: linear-gradient(135deg, #fff2ec, #ffe9df);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #a97b61;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offer-item h3 span {
+    font-size: 1.4rem;
+    margin-right: 6px;
+}
+
+/* -------------------------------
+   Welcome Section
+--------------------------------- */
+.welcome {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #fff7f2, #fbeee7);
+    border-radius: 12px;
+    margin: 3rem auto;
+    max-width: 1000px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.welcome h1 {
+    font-size: 2.5rem;
+    color: #4b2e2e;
+    margin-bottom: 1rem;
+}
+
+.welcome h1 span {
+    color: #a97b61;
+    text-shadow: 1px 1px 3px rgba(169, 123, 97, 0.3);
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    color: #6a443e;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+
+/* -------------------------------
+   Responsive
+--------------------------------- */
+@media (max-width: 768px) {
+
+    .adv {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .adv-img img {
+        width: 200px;
+    }
+
+    .welcome h1 {
+        font-size: 2rem;
+    }
+
+    .welcome p {
+        font-size: 1rem;
+    }
+
+    .slideshow {
+        height: 50vh;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        font-size: 1.2rem;
+        padding: 8px 14px;
+        left: 50%;
+        bottom: 15%;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+    }
+
+    .overtext {
+        padding: 10px 20px;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .video-row {
+        flex-direction: column;
+        /* stack videos vertically */
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    .video-box {
+        flex: 1 1 100%;
+        /* full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .video-box iframe {
+        width: 100%;
+        height: auto;
+        /* maintain proper aspect ratio */
+    }
+
+
+}
+
+/* -------------------------------
+   reCAPTCHA
+--------------------------------- */
+.g-recaptcha {
+    margin: 1rem 0;
+}
+
+
+/* -------------------------------
+   Search Bar
+--------------------------------- */
+
+.search-bar {
+    text-align: center;
+    margin: 50px 0 5px;
+}
+
+#searchInput {
+    width: 50%;
+    padding: 12px 40px 12px 40px;
+    /* space for icon */
+    font-size: 16px;
+    border: 1px solid #ffa7a7;
+    border-radius: 25px;
+    outline: none;
+    background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat 10px center;
+    background-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    width: 60%;
+    border-color: #ff6f6f;
+    box-shadow: 0 4px 10px rgba(255, 111, 111, 0.3);
+}
+
+/* Fade animations */
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+
+
+/* -------------------------------
+   Success popup notification
+--------------------------------- */
+
+#successMessage {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    /* green */
+    color: white;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    /* hidden by default */
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(20px);
+    z-index: 1000;
+}
+
+/* Show state (applied by JS) */
+#successMessage.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* -------------------------------
+   header
+--------------------------------- */
+
+header {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: #f5ebe0;
+    /* light coffee tone */
+    padding: 15px 20px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* space between logo and text */
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.site-name {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #4b2e05;
+    /* deep coffee brown */
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 15px;
+}
